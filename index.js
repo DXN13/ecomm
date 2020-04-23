@@ -8,6 +8,8 @@ const cartsRouter = require('./routes/carts');
 
 const app = express();
 
+var port = process.env.PORT || 3000;
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -20,6 +22,6 @@ app.use(productsRouter);
 app.use(adminProductsRouter);
 app.use(cartsRouter);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Listening');
 });
